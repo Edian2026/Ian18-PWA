@@ -25,6 +25,15 @@
 
 <body>
 
+    <!-- Canvas de efectos -->
+<canvas id="fx"></canvas>
+
+<!-- Destellos -->
+<div id="flash"></div>
+
+<!-- Fondo -->
+<div class="background-glow"></div>
+
     <!-- Fondo de partículas -->
     <canvas id="fx"></canvas>
 
@@ -60,11 +69,21 @@
 
     </section>
 
+<div id="igniteContainer">
+
+    <button id="igniteBtn">
+
+        💣 ENCENDER LA MECHA
+
+    </button>
+
+</div>
+
     <!-- Pantalla principal -->
 
     <main id="main">
 
-        <div class="card">
+        <div class="card" id="card">
 
             <div class="hero">
 
@@ -140,25 +159,21 @@
 
             <div class="buttons">
 
-                <a class="btn"
+                <a class="btn map-btn"
+   href="https://maps.google.com/?q=Cerro+Blanco+0489+Maipu+Chile"
+   target="_blank">
 
-                    href="https://maps.google.com/?q=Cerro+Blanco+0489+Maipu+Chile"
+    Cómo llegar
 
-                    target="_blank">
+</a>
 
-                    📍 CÓMO LLEGAR
+<a class="btn whatsapp-btn"
+   href="https://wa.me/56947550857?text=Hola%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Ian"
+   target="_blank">
 
-                </a>
+    Confirmar asistencia
 
-                <a class="btn"
-
-                    href="https://wa.me/56947550857?text=Hola%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Ian"
-
-                    target="_blank">
-
-                    💬 CONFIRMAR
-
-                </a>
+</a>
 
             </div>
 
@@ -167,8 +182,12 @@
     </main>
 
     <script src="js/app.js"></script>
+<script src="js/countdown.js"></script>
 <script src="js/bomb.js"></script>
+<script src="js/particles.js"></script>
 <script src="js/sparks.js"></script>
+<script src="js/explosion.js"></script>
+<script src="js/fuse.js"></script>
 <script src="js/scene.js"></script>
 
 </body>

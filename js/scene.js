@@ -1,50 +1,50 @@
-// =====================================
-// IAN 18 EXPERIENCE
-// Scene Manager v1.0
-// =====================================
+// =========================================
+// IAN 18 - Scene Manager
+// =========================================
 
 const Scene = {
 
     intro: document.getElementById("intro"),
-    main: document.getElementById("main"),
     bomb: document.getElementById("bomb"),
+    card: document.getElementById("card"),
+    flash: document.getElementById("flash"),
 
     start(){
 
-        // La tarjeta permanece oculta al comenzar
-        this.main.style.opacity = 0;
+        this.card.style.opacity = "0";
 
-        // La bomba también
-        this.bomb.style.opacity = 0;
+        this.bomb.style.opacity = "0";
 
-        // A los 3.5 segundos baja la bomba
         setTimeout(()=>{
 
             this.dropBomb();
 
-        },3500);
+        },2500);
 
     },
 
     dropBomb(){
 
-        this.bomb.style.opacity = 1;
-        this.bomb.classList.add("drop");
+        this.bomb.style.opacity="1";
 
-        // Esperamos que termine la caída
+        this.bomb.classList.add("bomb-drop");
+
         setTimeout(()=>{
 
-            this.showInvitation();
+            this.card.classList.add("card-show");
 
-        },2200);
+        },1800);
 
-    },
+        setTimeout(()=>{
 
-    showInvitation(){
+    const r = this.bomb.getBoundingClientRect();
 
-        this.main.style.transition="opacity 1.2s";
+    explode(
+        r.left + r.width/2,
+        r.top + r.height/2
+    );
 
-        this.main.style.opacity=1;
+},1700);
 
     }
 
@@ -55,3 +55,10 @@ window.addEventListener("load",()=>{
     Scene.start();
 
 });
+function showInvitation(){
+
+    const card=document.getElementById("card");
+
+    card.classList.add("card-show");
+
+}

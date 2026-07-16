@@ -71,18 +71,13 @@ FONDO
 
 }
 
-canvas{
-
+#fx{
     position:fixed;
-
     inset:0;
-
     width:100%;
-
     height:100%;
-
-    z-index:1;
-
+    pointer-events:none;
+    z-index:20;
 }
 
 /*==========================
@@ -759,33 +754,63 @@ opacity:0;
 }
 
 }
-/*=========================
+
+/*======================================
 ESCENAS
-=========================*/
+======================================*/
 
-#main{
+#card{
+    position: relative;
+    z-index: 50;
+}
 
-    opacity:1;
+.card-show{
+
+    animation:showCard 1.2s ease forwards;
 
 }
 
-.drop{
+@keyframes showCard{
 
-    animation:dropBomb 2s ease forwards;
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.95);
+
+        filter:blur(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+        filter:blur(0);
+
+    }
 
 }
 
-@keyframes dropBomb{
+.bomb-drop{
+
+    animation:bombDrop 1.8s cubic-bezier(.2,1,.2,1) forwards;
+
+}
+
+@keyframes bombDrop{
 
     0%{
 
         transform:
         translate(-50%,-500px)
-        rotate(-20deg);
+        rotate(-25deg);
 
     }
 
-    60%{
+    55%{
 
         transform:
         translate(-50%,40px)
@@ -793,10 +818,10 @@ ESCENAS
 
     }
 
-    80%{
+    72%{
 
         transform:
-        translate(-50%,-10px)
+        translate(-50%,-15px)
         rotate(-8deg);
 
     }
@@ -807,5 +832,133 @@ ESCENAS
         translateX(-50%);
 
     }
+
+}
+/*==================================
+FLASH DE EXPLOSIÓN
+===================================*/
+
+#flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+}
+
+.flash-active{
+
+    animation:flashExplosion .18s linear;
+
+}
+
+@keyframes flashExplosion{
+
+    0%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+/*======================================
+SHAKE
+======================================*/
+
+.shake{
+
+    animation:screenShake .5s;
+
+}
+
+@keyframes screenShake{
+
+0%{transform:translate(0,0);}
+10%{transform:translate(-8px,5px);}
+20%{transform:translate(7px,-6px);}
+30%{transform:translate(-5px,4px);}
+40%{transform:translate(8px,-4px);}
+50%{transform:translate(-7px,6px);}
+60%{transform:translate(6px,-5px);}
+70%{transform:translate(-4px,3px);}
+80%{transform:translate(5px,-3px);}
+90%{transform:translate(-2px,2px);}
+100%{transform:translate(0,0);}
+
+}
+/*==============================
+BOTÓN ENCENDER
+==============================*/
+
+#igniteContainer{
+
+    position:fixed;
+
+    left:50%;
+
+    top:180px;
+
+    transform:translateX(-50%);
+
+    z-index:80;
+
+}
+
+#igniteBtn{
+
+    border:none;
+
+    padding:18px 34px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:white;
+
+    background:linear-gradient(45deg,#d60000,#ff5a00);
+
+    box-shadow:
+    0 0 20px rgba(255,0,0,.45);
+
+    transition:.25s;
+
+}
+
+#igniteBtn:hover{
+
+    transform:scale(1.05);
+
+}
+
+#igniteBtn:active{
+
+    transform:scale(.95);
+
+}
+
+.hideIgnite{
+
+    opacity:0;
+
+    pointer-events:none;
 
 }

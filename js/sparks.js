@@ -14,6 +14,12 @@ function spawnSpark(){
 
     const r = spark.getBoundingClientRect();
 
+    spawnParticles(
+    r.left + r.width/2,
+    r.top + r.height/2,
+    3
+);
+
     const p = document.createElement("span");
 
     p.className = "flying-spark";
