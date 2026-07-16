@@ -1,123 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ian | 18 Años</title>
+    <title>Ian | 18 Años</title>
 
-<meta name="theme-color" content="#c40000">
+    <meta name="theme-color" content="#d60000">
 
-<link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="manifest.json">
 
-<link rel="stylesheet" href="css/style.css">
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-<canvas id="fx"></canvas>
+    <!-- Fondo de partículas -->
+    <canvas id="fx"></canvas>
 
-<div id="intro">
+    <!-- Fondo luminoso -->
+    <div class="background-glow"></div>
 
-    <h2>MARVEL STUDIOS</h2>
+    <div id="bomb">
 
-    <h1>IAN</h1>
+    <div class="rope"></div>
 
-    <h3>18 AÑOS</h3>
+    <div class="bomb-body">
+
+        <div class="fuse">
+    <div class="spark" id="spark"></div>
+</div>
+
+    </div>
 
 </div>
 
-<section id="main">
+    <!-- Intro -->
+    <section id="intro">
 
-    <div class="card">
+        <div class="marvel">
 
-        <div class="hero">
-            
-        <h1>IAN</h1>
+            <h2>MARVEL STUDIOS</h2>
 
-        <span>18</span>
+            <h1>IAN</h1>
 
-        <p>
-
-        Sábado 22 Agosto 2026<br>
-
-        21:00 hrs
-
-        </p>
-
-    </div>
-
-    <div id="countdown">
-
-        <div>
-
-            <h2 id="days">00</h2>
-
-            <small>DÍAS</small>
+            <h3>18 AÑOS</h3>
 
         </div>
 
-        <div>
+    </section>
 
-            <h2 id="hours">00</h2>
+    <!-- Pantalla principal -->
 
-            <small>HORAS</small>
+    <main id="main">
+
+        <div class="card">
+
+            <div class="hero">
+
+                <span class="subtitle">
+                    CON UN GRAN PODER...
+                </span>
+
+                <h1>IAN</h1>
+
+                <div class="age">
+
+                    18
+
+                </div>
+
+                <p class="date">
+
+                    Sábado 22 Agosto 2026
+
+                    <br>
+
+                    21:00 hrs
+
+                </p>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <h3 class="faltan">
+
+                FALTAN
+
+            </h3>
+
+            <div id="countdown">
+
+                <div>
+
+                    <span id="days">00</span>
+
+                    <small>DÍAS</small>
+
+                </div>
+
+                <div>
+
+                    <span id="hours">00</span>
+
+                    <small>HORAS</small>
+
+                </div>
+
+                <div>
+
+                    <span id="minutes">00</span>
+
+                    <small>MINUTOS</small>
+
+                </div>
+
+                <div>
+
+                    <span id="seconds">00</span>
+
+                    <small>SEGUNDOS</small>
+
+                </div>
+
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="buttons">
+
+                <a class="btn"
+
+                    href="https://maps.google.com/?q=Cerro+Blanco+0489+Maipu+Chile"
+
+                    target="_blank">
+
+                    📍 CÓMO LLEGAR
+
+                </a>
+
+                <a class="btn"
+
+                    href="https://wa.me/56947550857?text=Hola%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Ian"
+
+                    target="_blank">
+
+                    💬 CONFIRMAR
+
+                </a>
+
+            </div>
 
         </div>
 
-        <div>
+    </main>
 
-            <h2 id="minutes">00</h2>
-
-            <small>MINUTOS</small>
-
-        </div>
-
-        <div>
-
-            <h2 id="seconds">00</h2>
-
-            <small>SEGUNDOS</small>
-
-        </div>
-
-    </div>
-
-    <div class="buttons">
-
-        <a
-
-        class="btn"
-
-        target="_blank"
-
-        href="https://maps.google.com/?q=Cerro+Blanco+0489+Maipu+Chile">
-
-        📍 Cómo llegar
-
-        </a>
-
-        <a
-
-        class="btn"
-
-        target="_blank"
-
-        href="https://wa.me/56947550857?text=Hola%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Ian">
-
-        💬 Confirmar
-
-        </a>
-
-    </div> <!-- hero -->
-
-    </div> <!-- card -->
-
-</section>
-
-<script src="js/app.js"></script>
+    <script src="js/app.js"></script>
+<script src="js/bomb.js"></script>
+<script src="js/sparks.js"></script>
+<script src="js/scene.js"></script>
 
 </body>
+
 </html>
